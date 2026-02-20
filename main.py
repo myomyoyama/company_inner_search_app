@@ -59,12 +59,16 @@ if not "initialized" in st.session_state:
 # タイトル表示
 cn.display_app_title()
 
-# モード表示
-cn.display_select_mode()
-
 # AIメッセージの初期表示
 cn.display_initial_ai_message()
-
+    
+# サイドバーの作成
+with st.sidebar:
+    st.markdown("<h2>利用目的</h2>", unsafe_allow_html=True)
+    # モード表示
+    cn.display_select_mode()
+    # 機能説明の表示
+    cn.display_howto_message()
 
 ############################################################
 # 5. 会話ログの表示
